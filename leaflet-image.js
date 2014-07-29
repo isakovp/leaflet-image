@@ -101,7 +101,7 @@ module.exports = function leafletImage(map, callback) {
 
         function loadTile(url, tilePos, tileSize, callback) {
             var im = new Image();
-            im.crossOrigin = '';
+            im.crossOrigin = 'anonymous';
             im.onload = function() {
                 callback(null, {
                     img: this,
@@ -154,7 +154,7 @@ module.exports = function leafletImage(map, callback) {
 
         canvas.width = dimensions.x;
         canvas.height = dimensions.y;
-        im.crossOrigin = '';
+        im.crossOrigin = 'anonymous';
 
         im.onload = function() {
             ctx.drawImage(this, x, y, size[0], size[1]);
